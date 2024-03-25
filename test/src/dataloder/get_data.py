@@ -69,20 +69,7 @@ def getdata(PATH, id_dataset, num_nearest_text, tokenizer, config):
     y_train = data['y_train']  # 训练集种类
     y_test = data['y_test']  # 测试集种类
     train_l = y_train.shape[0]
-    print(train_l)
-    print(X_train.shape)
 
-    y_trianlabel = np.argmax(y_train, axis=1)
-    y_testlabel = np.argmax(y_test, axis=1)
-
-
-    if id_dataset == 'lixia':
-        nk = 140
-    elif id_dataset == 'haidian':
-        nk = 248
-
-    # c1_onehot_train = data['onehot_ary'][:train_l, -nk:]
-    # c1_onehot_test = data['onehot_ary'][train_l:, -nk:]
     onehot_train = data['onehot_ary'][:train_l, :]
     onehot_test = data['onehot_ary'][train_l:, :]
 
